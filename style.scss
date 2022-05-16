@@ -1,0 +1,138 @@
+body {
+  padding: 5px 25px;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.animation {
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 25px;
+    transform: rotate(25deg);
+  }
+  50% {
+    left: 50px;
+    transform: rotate(50deg);
+  }
+  75% {
+    left: 75px;
+    transform: rotate(75deg);
+  }
+  100% {
+    left: 100px;
+    transform: rotate(100deg);
+  }
+}
+
+.block {
+  background-color: rgba(50, 205, 50, 0.4);
+  padding: 1em;
+
+  &__element {
+    background-color: lightcoral;
+    padding: 1em;
+  }
+}
+
+.modifier {
+  background-color: rgba(0, 0, 139, 0.8);
+  color: #fff;
+}
+
+.cards {
+  padding: 25px 0;
+
+  @media (min-width: 550px) {
+    display: flex;
+    justify-content: space-around;
+
+    &__card {
+      width: 40%;
+      margin-bottom: unset;
+    }
+  }
+
+  @media (min-width: 800px) {
+    width: 80%;
+    margin: 25px auto;
+  }
+
+  @media (min-width: 1400px) {
+    width: 50%;
+  }
+
+  &__card {
+    border: 1px solid grey;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0 1em;
+    margin-bottom: 25px;
+  }
+
+  &__picture img {
+    max-width: 100%;
+    border: 1px solid #000;
+  }
+
+  &__text {
+    text-align: justify;
+  }
+}
+
+.card--dark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+
+  img {
+    border: 1px solid #bfbfbf;
+  }
+}
+
+.form {
+  border: 1px solid grey;
+  border-radius: 15px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3em;
+
+  &__fieldset {
+    width: 100%;
+    padding: 0.5em 1em;
+  }
+}
+
+.payment--form {
+  border: 1px solid grey;
+  border-radius: 15px;
+  width: 80%;
+  margin: 25px auto;
+  padding: 0.5vh 2vw;
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.table,
+th,
+td {
+  border: 1px solid #000;
+}

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- metadata - adta which describes data -->
+    <!-- character encoding for document -->
+    <meta charset="UTF-8">
+    <!-- http-equive - pragma directive equal to similarly-named HTTP header-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- when name attribute is set element divides document-level meta-data -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- itemprop - user-defined metadata -->
+
+    <!-- Define keywords for search engines -->
+    <meta name="keywords" content="HTML, CSS, JavaScipt">
+    <!-- Define a desdcription of your web page -->
+    <meta name="description" content="HTML White and Green badge acceptance criteria">
+    <!-- Define author of page -->
+    <meta name="author" content="David Singer">
+    <!-- Refresh document every 30 seconds -->
+    <meta http-equiv="refresh" content="30">
+
+    <title>HTML Green Badge requierements</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>HTML Green Badge</h1>
+    </header>
+
+    <main>
+        <article>
+            <h2>Multimedia</h2>
+            <section>
+                <h3>Video</h3>
+                <video src="/video/mov_bbb.mp4" controls autoplay loop muted width="320" height="240">
+                    <source src="mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support the video tag
+                </video>
+                <details>
+                    <summary>track</summary>
+                    Use track for subtitles
+                </details>
+            </section>
+            <section>
+                <h3>Audio</h3>
+                <audio src="/audio/horse.ogm" controls autoplay loop muted>
+                    <source src="horse.ogg" type="audio/ogg">
+                    <source src="horse.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </section>
+            <section>
+                <h3>Youtube</h3>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/FeJKJ5MoCHY?autoplay=1&mute=1&loop=1&controls=0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </section>
+            <section>
+                <h3>Picture</h3>
+                <picture>
+                    <source srcset="/img/pink_flowers.jpg" media="(min-width: 1000px)">
+                    <source srcset="/img/white_flower.jpg" media="(min-width: 700px)">
+                    <img src="/img/orange_flowers.jpg" alt="Flowers">
+                </picture>
+            </section>
+            <section>
+                <h3>Responsive Img</h3>
+                <img class="responsive" src="/img/nature_wide.jpg" alt="nature wide">
+            </section>
+            <section>
+                <h3>Scalable Vector Graphics - SVG</h3>
+                <p>SVG is a language for describing 2D graphics in XML <br />
+                    Each drawn SVG shape is remembered as an object by the browser <br />
+                    Supports event handlers</p>
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                </svg>
+                <br /><br />
+                <svg width="400" height="100">
+                    <rect width="400" height="100" stroke="black" stroke-width="4" fill="darkblue" />
+                </svg>
+                <br /><br />
+                <svg width="400" height="180">
+                    <rect x="50" y="20" rx="20" ry="20" width="150" height="150" stroke="grey" stroke-width="4"
+                        fill="lightcoral" />
+                </svg>
+                <br /><br />
+                <svg class="animation" width="300" height="200">
+                    <polygon points="100,10 40,198 190,78 10,78 160,198"
+                        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                </svg>
+                <br /><br />
+                <svg height="130" width="500">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                    <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+            </section>
+        </article>
+
+        <article>
+            <h2>CSS - BEM</h2>
+            <section class="block">
+                <h3>Block</h3>
+                <p>Standalone entity that is meaningful on its own. <br />
+                    Blocks can be nested and interact with each other - no precedence or hierarchy<br /></p>
+            </section>
+            <section class="block__element">
+                <h3>Element</h3>
+                <p>Part of block and no standalone meaning</p>
+            </section>
+            <section class="block__element modifier">
+                <h3>Modifier</h3>
+                <p>Flags on blocks or elements <br />
+                    Use them to change appearance, behavior or state.</p>
+            </section>
+        </article>
+
+        <article class="cards">
+            <section class="cards__card card--dark">
+                <h4 class="cards__title">Title</h4>
+                <picture class="cards__picture">
+                    <source srcset="/img/pink_flowers.jpg" media="(min-width: 1000px)">
+                    <source srcset="/img/white_flower.jpg" media="(min-width: 700px)">
+                    <img src="/img/orange_flowers.jpg" alt="Flowers">
+                </picture>
+                <p class="cards__text">The essential feature of a text input is its ability to accept plain text. When
+                    we need it to be
+                    multiline, nothing changes semantically — that’s why multiline is just a modifier. At the HTML
+                    level, this is represented by different markup for technical reasons, which is also fine because
+                    we’re only defining semantics, not the implementation. The textfield tag itself is an element, and
+                    label is another element; later, we might need other elements, like a status icon, error message
+                    placeholder or auto-suggestion.</p>
+            </section>
+            <section class="cards__card card--light">
+                <h4 class="cards__title">Title</h4>
+                <picture class="cards__picture">
+                    <source srcset="/img/pink_flowers.jpg" media="(min-width: 1000px)">
+                    <source srcset="/img/white_flower.jpg" media="(min-width: 700px)">
+                    <img src="/img/orange_flowers.jpg" alt="Flowers">
+                </picture>
+                <p class="cards__text">The essential feature of a text input is its ability to accept plain text.
+                    When we need it to be
+                    multiline, nothing changes semantically — that’s why multiline is just a modifier. At the HTML
+                    level, this is represented by different markup for technical reasons, which is also fine because
+                    we’re only defining semantics, not the implementation. The textfield tag itself is an element, and
+                    label is another element; later, we might need other elements, like a status icon, error message
+                    placeholder or auto-suggestion.</p>
+            </section>
+        </article>
+
+        <article>
+            <h2>Data Attributes</h2>
+            <p>data associated with particular element but no defined meaning <br />
+                For instance: <br />
+                Additional data inormation which doesn't require visual representation.
+            </p>
+            <article id="cars">
+                <section id="electric-cars" data-columns="3" data-index-number="1234" data-parent="cars">. . .</section>
+            </article>
+        </article>
+
+
+        <article>
+            <h2>Forms</h2>
+            <dl>
+                <dt><strong>fieldset</strong></dt>
+                <dd>create groups of widgets that share the same purpose, styling and semantics</dd>
+                <dd><strong>legend</strong> used below fieldset as label</dd>
+            </dl>
+            <form class="form" action="">
+                <fieldset class="form__fieldset">
+                    <legend>Fruit juice size</legend>
+                    <p>
+                        <input type="radio" name="size_1" id="size_1" value="small">
+                        <label for="size_1">Small</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="size_2" id="size_2" value="medium">
+                        <label for="size_2">Medium</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="size_3" id="size_3" value="large">
+                        <label for="size_3">Large</label>
+                    </p>
+                </fieldset>
+            </form>
+
+            <section class="form--example">
+                <form class="payment--form" action="">
+                    <h3>Payment form</h3>
+                    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+                    <h4>Contact information</h4>
+                    <fieldset>
+                        <legend>Title</legend>
+                        <ul class="payment--form__list">
+                            <li>
+                                <label for="title_1"><input type="radio" id="title_1" name="title" value="A">
+                                    Ace</label>
+                            </li>
+                            <li>
+                                <label for="title_2"><input type="radio" id="title_2" name="title" value="K">
+                                    King</label>
+                            </li>
+                            <li>
+                                <label for="title_3"><input type="radio" id="title_3" name="title" value="Q">
+                                    Queen</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <p>
+                        <label for="name"><span>Name:</span> <strong><abbr title="required">*</abbr></strong></label>
+                        <input type="text" id="name" name="username" pattern="[Bb]anana | [Cc]herry">
+                    </p>
+                    <p>
+                        <label for="email"><span>E-mail:</span> <strong><abbr title="required">*</abbr></strong></label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="password"><span>Password:</span> <strong><abbr
+                                    title="required">*</abbr></strong></label>
+                        <input minlength="20" type="password" id="password" name="password">
+                    </p>
+                    <h4>Payment information</h4>
+                    <p>
+                        <label for="password"><span>Card type:</span></label>
+                        <select name="card" id="card">
+                            <option value="visa">Visa</option>
+                            <option value="master">Master</option>
+                            <option value="americanExpress">American Express</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="number"><span>Card number:</span> <strong><abbr
+                                    title="required">*</abbr></strong></label>
+                        <input type="tel" id="number" name="number">
+                    </p>
+                    <p>
+                        <label for="number"><span>Card number:</span> <strong><abbr
+                                    title="required">*</abbr></strong></label>
+                        <input type="date" id="card-number" name="card-number">
+                    </p>
+                    <section>
+                        <p>
+                            <button type="submit">Validate the payment</button>
+                        </p>
+                    </section>
+                </form>
+            </section>
+            <section>
+                <h3>Client-side form validation using JavaScript</h3>
+                <p>Use the <strong>Constraint Validation API</strong></p>
+            </section>
+            <section>
+                <h3>Sending form data</h3>
+                <p>client (web browser) sends request to server (Apache, Nginx, IIS, Tomcat) using HTTP protocl. <br />
+                    Server answers using the same protocol.</p>
+                <h4>The action attribute</h4>
+                <p>defines where data gets sent - <strong>valid relative or absolute URL</strong></p>
+                <h4>The method attribute</h4>
+                <p>defines how data gets sent - <strong>GET</strong> or <strong>POST</strong></p>
+                <h5>The GET method</h5>
+                <p>"Hey server, I want to get this resource"<br />
+                    -> Browser sends an empty body <br />
+                    -> data sent to server is appended do URL</p>
+                <form action="http://www.foo.com" method="GET">
+                    <div>
+                        <label for="say">What greeting do you want to say?</label>
+                        <input name="say" id="say" value="Hi">
+                    </div>
+                    <div>
+                        <label for="to">Who do you want to say it to?</label>
+                        <input name="to" id="to" value="Mom">
+                    </div>
+                    <div>
+                        <button>Send my greetings</button>
+                    </div>
+                </form>
+                <p><strong>http://www.foo.com?say=Hi&to=Mom</strong> <br />
+                    -> once url adress endeded <strong>?</strong> <br>
+                    -> followed by <strong>name/value</strong> pairs <br />
+                    -> each one separated by <strong>&</strong>
+                </p>
+                <br /><br />
+                <h5>The POST method</h5>
+                <p>"Hey server, take a look at this data in the body and send me back an appropraite result. <br />
+                    data is appended to the body of HTTP request</p>
+                <form action="http://www.foo.com" method="POST">
+                    <div>
+                        <label for="say">What greeting do you want to say?</label>
+                        <input name="say" id="say" value="Hi">
+                    </div>
+                    <div>
+                        <label for="to">Who do you want to say it to?</label>
+                        <input name="to" id="to" value="Mom">
+                    </div>
+                    <div>
+                        <button>Send my greetings</button>
+                    </div>
+                </form>
+
+                <p>2 reasons to use POST: <br />
+                <ol>
+                    <li>GET displays name/value pairs in URL, also passwords</li>
+                    <li>large amount of data won't fit in URL because browsers limit URL size</li>
+                </ol>
+                </p>
+
+                <p><strong>Sending files:</strong> - the <strong>enctype attribute</strong><br />
+                    specifies value of content-type HTTP header inclueded in request generated when form is submitted
+                    <br />
+                    files = binary data <br />
+                    all other data = text data <br />
+
+                <ol>
+                    <li>set method attribute to POST</li>
+                    <li>enctype value = multipart/form-data (because binary data and text data</li>
+                    <li>include <input type="file" name="file" id="file"></li>
+                </ol>
+                </p>
+            </section>
+        </article>
+
+        <article>
+            <h2>Tables</h2>
+            <table>
+                <colgroup>
+                    <col span="2" style="background-color: red;">
+                    <col style="background-color: green;">
+                </colgroup>
+                <tr>
+                    <th>Title</th>
+                    <th>Title</th>
+                    <th>Title</th>
+                </tr>
+                <tr>
+                    <td>Content</td>
+                    <td>Content</td>
+                    <td>Content</td>
+                </tr>
+                <tr>
+                    <td>Content</td>
+                    <td>Content</td>
+                    <td>Content</td>
+                </tr>
+            </table>
+
+            <table class="table">
+                <caption>Caption</caption>
+                <thead>
+                    <tr>
+                        <th colspan="2">Head</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Body</td>
+                        <td>Body</td>
+                    </tr>
+                    <tr>
+                        <td>Body</td>
+                        <td>Body</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="2">Foot</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </article>
+
+        <article>
+            <h2>iFrame</h2>
+            <p>inline frame, used to emebd another document within the current HTML document <br />
+                target for a link:</p>
+            <iframe src="demo_iframe.html" frameborder="0" title="example" height="200" width="300"
+                name="iframe_a"></iframe>
+            <p><a href="https://www.w3schools.com" target="iframe_a">Target</a></p>
+        </article>
+
+    </main>
+
+    <footer>
+        Authored by David Singer
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
